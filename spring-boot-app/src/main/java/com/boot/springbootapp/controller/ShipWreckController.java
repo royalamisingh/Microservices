@@ -42,7 +42,7 @@ public class ShipWreckController {
 	public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck shipwreck) {
 		// return ShipwreckStub.update(id, shipwreck);
 		Shipwreck existingShipWreck = shipWreckRepository.findById(id).get();
-		BeanUtils.copyProperties(shipwreck, Optional.of(shipWreckRepository));
+		BeanUtils.copyProperties(shipwreck, existingShipWreck);
 		return shipWreckRepository.saveAndFlush(existingShipWreck);
 	}
 
