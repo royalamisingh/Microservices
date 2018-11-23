@@ -1,6 +1,15 @@
 package com.boot.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Shipwreck {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
 	String name;
 	String description;
@@ -8,11 +17,11 @@ public class Shipwreck {
 	Integer depth;
 	Double latitude;
 	Double longitude;
-	Integer yearDiscovered;
+	Integer year_Discovered;
 
 	public Shipwreck() { }
 
-	public Shipwreck(Long id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
+	public Shipwreck(Long id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer year_Discovered) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -20,7 +29,7 @@ public class Shipwreck {
 		this.depth = depth;
 		this.latitude = latitude;
 		this.longitude = longitude;
-		this.yearDiscovered = yearDiscovered;
+		this.year_Discovered = year_Discovered;
 	}
 
 	public Long getId() {
@@ -80,10 +89,10 @@ public class Shipwreck {
 	}
 
 	public Integer getYearDiscovered() {
-		return yearDiscovered;
+		return year_Discovered;
 	}
 
 	public void setYearDiscovered(Integer yearDiscovered) {
-		this.yearDiscovered = yearDiscovered;
+		this.year_Discovered = yearDiscovered;
 	}
 }
