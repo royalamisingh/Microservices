@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.boot.model.Shipwreck;
+import com.boot.springbootapp.model.Shipwreck;
 
 public class ShipwreckStub {
-	private static Map<Long, Shipwreck> wrecks = new HashMap<Long, Shipwreck>();
+	private static Map<Long, com.boot.springbootapp.model.Shipwreck> wrecks = new HashMap<Long, Shipwreck>();
 	private static Long idIndex = 3L;
 
 	//populate initial wrecks

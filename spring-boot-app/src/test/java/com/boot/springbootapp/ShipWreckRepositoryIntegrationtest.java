@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.boot.model.Shipwreck;
+import com.boot.springbootapp.model.Shipwreck;
 import com.boot.springbootapp.repository.ShipWreckRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
