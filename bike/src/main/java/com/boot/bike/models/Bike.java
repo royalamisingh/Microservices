@@ -3,13 +3,29 @@ package com.boot.bike.models;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyIntitializer" , "handler"})
 public class Bike {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	
 	private String email;
 	private String phone;
 	private String model; 
 	private String serialNumber;
 	private BigDecimal purchasePrice;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING , pattern = "MM-dd-yyyy")
 	private Date purchaseDate;
 	private boolean contact;
 	
@@ -63,10 +79,16 @@ public class Bike {
 	}
 
 	private String name;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	@Override
 	public String toString() {
-		return "Bike [name=" + name + ", email=" + email + ", phone=" + phone + ", model=" + model + ", serialNumber="
+		return "Bike [id=" + id + ", email=" + email + ", phone=" + phone + ", model=" + model + ", serialNumber="
 				+ serialNumber + ", purchasePrice=" + purchasePrice + ", purchaseDate=" + purchaseDate + ", contact="
-				+ contact + "]";
+				+ contact + ", name=" + name + "]";
 	}
 }
